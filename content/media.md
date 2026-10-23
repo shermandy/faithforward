@@ -21,11 +21,13 @@ blocks:
   - type: rich_text
     text_align: left
     bg_color: white
-    body: |-
+    body: >-
       # Text
+
 
       **Test**
 
-      <a href="https://google.com" class="button primary">Google</a>
+
+      <a href="https://google.com" class="button primary" target="_blank" rel="noopener noreferrer">GOogogogle</a>
 ---
 Media!
