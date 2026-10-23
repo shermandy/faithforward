@@ -43,11 +43,25 @@ blocks:
           Latrobe, PA
 
           15650
+      - heading: Washington
+        body: |-
+          14 N Main St
+
+          Washington, PA
+
+          15301
+      - heading: Greensburg
+        body: |-
+          123 Main Street
+
+          Greensburg, PA
+
+          15601
       - heading: Blairsville
         body: |-
-          338 Main Street
+          123 Main Street
 
-          Latrobe, PA
+          Blairsville, PA
 
           15717
     section_heading: Locations
