@@ -18,5 +18,12 @@ blocks:
       - url: https://google.com
         text: Our Story
         target: _blank
+  - type: rich_text
+    text_align: left
+    bg_color: white
+    body: |-
+      # Text
+
+      **Test**
 ---
 Media!
