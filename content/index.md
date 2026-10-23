@@ -95,4 +95,13 @@ blocks:
           to you: we would love for you to join us."
         card_url: /events
         cta_text: View Events
+  - type: multi_text_grid
+    bg_color: white
+    section_heading: Books
+    text_sections:
+      - heading: "Angel Arms: Brighter Path"
+        body: >-
+          
+
+          ![Brighter Path Cover Design](/images/brighterpaths.png "Brighter Path Cover Design")
 ---
