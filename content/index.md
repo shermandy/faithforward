@@ -99,9 +99,20 @@ blocks:
     bg_color: white
     section_heading: Books
     text_sections:
-      - heading: "Angel Arms: Brighter Path"
+      - heading: ""
         body: >-
-          
+          ![Brighter Path Cover Design](/images/brighterpaths.png "Brighter Path
+          Cover Design")
 
-          ![Brighter Path Cover Design](/images/brighterpaths.png "Brighter Path Cover Design")
+
+          #### Angel Arms: Brighter Paths
+
+
+          Dr. Dawn Hennessey, 2025
+
+
+          A Caring Approach for Children Exposed to Substance Use, Trauma, and Special Challenges   
+
+
+          \
 ---
