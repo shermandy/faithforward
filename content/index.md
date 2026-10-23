@@ -115,4 +115,5 @@ blocks:
 
 
           <a href="https://www.amazon.com/Angel-Arms-Brighter-Path-Challenges/dp/1807025136?crid=3OJ7HWZFI0323&dib=eyJ2IjoiMSJ9.AffBgiwV865nhddN5EeWUC8CM8VZ_HUmmm6WUPVMpT49v0p-a9yIByuNWoRDpBA0d1x2NOLzGHpjqbn8jTt8ieAAWTJyW9idmKxIIFSxmJU.tWnmBdj7Ozh087tCYjyx87bVcVjN9ypEzlc2wW0T2ig&dib_tag=se&keywords=angel+arms+brighter+path&qid=1792783880&sprefix=angel+arms+brighter+path%2Caps%2C119&sr=8-1" class="button primary" target="_blank" rel="noopener noreferrer">Buy Now</a>
+      - body: '![Saving Isaac Cover](/images/savingisaac.png "Saving Isaac Cover")'
 ---
