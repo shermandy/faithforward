@@ -25,5 +25,7 @@ blocks:
       # Text
 
       **Test**
+
+      <a href="https://google.com" class="button primary">Download Now</a>
 ---
 Media!
