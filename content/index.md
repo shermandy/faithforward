@@ -122,7 +122,7 @@ blocks:
           #### Saving Isaac
 
 
-          By Scott Brown with Dr. Dawn Hennessey, 2024 
+          Scott Brown with Dr. Dawn Hennessey, 2024 
 
 
           Hearing the Voices of Children Exposed to Drugs and Trauma
