@@ -52,6 +52,3 @@ blocks:
 
       Whether you are looking for support, wanting to educate your family, or hoping to make an impact as a volunteer or donor, there is a place for you in our story. Together, we can change the stigma. Together, we move faith forward.
 ---
-Hey-o! I'm cool?
-
-![donation icon](/images/vector-2-.png "Donate!")
