@@ -3,6 +3,7 @@ title: Test event title
 image: /images/david-menidrey-myrg0ptgh50-unsplash.jpg
 image_alt: Pumpkins
 event_date: 2026-11-01 20:00
+event_end_date: 2026-11-01 22:00
 location: 123 Fake Street
 summary: Join us for fun times!
 ---
