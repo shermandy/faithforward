@@ -26,6 +26,6 @@ blocks:
 
       **Test**
 
-      <a href="https://google.com" class="button primary">Download Now</a>
+      <a href="https://google.com" class="button primary">Google</a>
 ---
 Media!
