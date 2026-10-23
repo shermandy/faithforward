@@ -96,7 +96,7 @@ blocks:
         card_url: /events
         cta_text: View Events
   - type: multi_text_grid
-    bg_color: white
+    bg_color: light-gray
     section_heading: Books
     text_sections:
       - heading: ""
