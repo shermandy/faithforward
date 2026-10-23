@@ -37,13 +37,11 @@ blocks:
       Our core community programs include:
 
 
-      Angel Arms Infant and Children Recovery Homes: Providing specialized, compassionate care, support, and a safe haven for the most vulnerable among us—infants and children affected by substance use.
+      * Angel Arms Infant and Children Recovery Homes: Providing specialized, compassionate care, support, and a safe haven for the most vulnerable among us—infants and children affected by substance use.
 
+      * Project Stand: Our signature community awareness initiative. Bringing together thousands of local residents, Project Stand serves as a powerful reminder that our community is "Standing Against Addiction" through education, connection, and grace.
 
-      Project Stand: Our signature community awareness initiative. Bringing together thousands of local residents, Project Stand serves as a powerful reminder that our community is "Standing Against Addiction" through education, connection, and grace.
-
-
-      Counseling & Support Groups: Offering free, licensed faith-based therapy, addiction counseling, and peer support groups to help individuals navigate the bumps in the road. Community Outreach: From Random Gifts of Kindness to custom educational workshops, we meet people exactly where they are with food, supplies, and encouragement.
+      * Counseling & Support Groups: Offering free, licensed faith-based therapy, addiction counseling, and peer support groups to help individuals navigate the bumps in the road. Community Outreach: From Random Gifts of Kindness to custom educational workshops, we meet people exactly where they are with food, supplies, and encouragement.
 
 
       ## Looking Forward
