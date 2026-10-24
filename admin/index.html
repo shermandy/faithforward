@@ -395,18 +395,20 @@
           {
             name: "content",
             label: "Alert Message",
-            widget: "string",
+            widget: "markdown",
+            buttons: ["bold", "italic", "link"], // Optional: limits toolbar to basic formatting
+            minimal: true,
           },
         ],
         toBlock: function (obj) {
-          return `<div class="alert-box">${obj.content || ""}</div>`;
+          return `<div class="alert-box">\n\n${obj.content || ""}\n\n</div>`;
         },
         fromBlock: function (match) {
           return {
-            content: match[1],
+            content: match[1].trim(),
           };
         },
-        pattern: /^<div class="alert-box">(.*?)<\/div>$/,
+        pattern: /^<div class="alert-box">\s*([\s\S]*?)\s*<\/div>$/,
         toPreview: function (obj) {
           return `<div class="alert-box">${obj.content || ""}</div>`;
         },
