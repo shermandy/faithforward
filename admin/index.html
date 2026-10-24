@@ -387,6 +387,29 @@
           return `<a href="${url}" class="button ${obj.style || "primary"}"${targetAttr}>${obj.text || "Click Here"}</a>`;
         },
       });
+      CMS.registerEditorComponent({
+        id: "alert",
+        label: "Alert Box",
+        fields: [
+          {
+            name: "content",
+            label: "Alert Message",
+            widget: "markdown",
+          },
+        ],
+        toBlock: function (obj) {
+          return `:::alert\n${obj.content || ""}\n:::`;
+        },
+        fromBlock: function (match) {
+          return {
+            content: match[1],
+          };
+        },
+        pattern: /^:::alert\n([\s\S]*?)\n:::$/,
+        toPreview: function (obj) {
+          return `<div class="alert-box">${obj.content || ""}</div>`;
+        },
+      });
     </script>
   </body>
 </html>
