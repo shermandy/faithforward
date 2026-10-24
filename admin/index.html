@@ -387,6 +387,7 @@
           return `<a href="${url}" class="button ${obj.style || "primary"}"${targetAttr}>${obj.text || "Click Here"}</a>`;
         },
       });
+      // add alert box to rich text component
       CMS.registerEditorComponent({
         id: "alert",
         label: "Alert Box",
@@ -394,18 +395,18 @@
           {
             name: "content",
             label: "Alert Message",
-            widget: "markdown",
+            widget: "string",
           },
         ],
         toBlock: function (obj) {
-          return `:::alert\n${obj.content || ""}\n:::`;
+          return `<div class="alert-box">${obj.content || ""}</div>`;
         },
         fromBlock: function (match) {
           return {
             content: match[1],
           };
         },
-        pattern: /^:::alert\n([\s\S]*?)\n:::$/,
+        pattern: /^<div class="alert-box">(.*?)<\/div>$/,
         toPreview: function (obj) {
           return `<div class="alert-box">${obj.content || ""}</div>`;
         },
