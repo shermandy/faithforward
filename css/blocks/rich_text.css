@@ -46,3 +46,9 @@
   background-color: rgb(250, 221, 221);
   border-radius: 10px;
 }
+.alert-box p {
+  margin: 0 0 1rem;
+}
+.alert-box p:last-of-type {
+  margin-bottom: 0;
+}
