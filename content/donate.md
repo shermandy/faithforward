@@ -27,9 +27,7 @@ blocks:
       Make a one-time investment or set up a recurring monthly gift to sustain our programs year-round. Consistent monthly giving allows us to plan ahead, expand our outreach, and say "yes" to more families in need.
 
 
-      <a href="https://venmo.com/code?user_id=1912527092973568561&created=1775570173.277565" class="button primary" target="_blank" rel="noopener noreferrer">Venmo</a>
-
-      <a href="https://cash.app/$faithforwardangel?qr=1" class="button primary" target="_blank" rel="noopener noreferrer">Cash App</a>
+      <a href="https://venmo.com/code?user_id=1912527092973568561&created=1775570173.277565" class="button primary" target="_blank" rel="noopener noreferrer">Venmo</a><a href="https://cash.app/$faithforwardangel?qr=1" class="button primary" target="_blank" rel="noopener noreferrer">Cash App</a>
 
 
       #### 2. Mail a Check
