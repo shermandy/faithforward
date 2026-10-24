@@ -6,4 +6,3 @@ layout: layout.njk
 permalink: /media/
 blocks: []
 ---
-Media!
