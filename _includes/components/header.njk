@@ -1,7 +1,7 @@
 <header>
     <div class="header-main">
-    <a href="#"><img src="/assets/images/logo.png" alt="Faith Forward Logo" /></a>
-    <h1><a href="#">Faith Forward</a></h1>
+    <a href="/"><img src="/assets/images/logo.png" alt="Faith Forward Logo" /></a>
+    <h1><a href="/">Faith Forward</a></h1>
     <img id="menu-open" src="/assets/images/menu.svg" alt="Menu Open Button" />
     <img id="menu-close" src="/assets/images/close-menu.svg" alt="Menu Close Button" />
     </div>
@@ -9,11 +9,14 @@
     <nav id="menu">
     <ul>
         {% for item in collections.nav | sortByOrder %}
-        <li>
-            <a href="{{ item.url }}" {% if item.url == page.url %}aria-current="page"{% endif %}>
-            {{ item.data.title }}
+        {% if item.url !== "/" %}
+            <li>
+            <a href="{{ item.url }}" 
+                {% if item.url == page.url %}class="active" aria-current="page"{% endif %}>
+                {{ item.data.title }}
             </a>
-        </li>
+            </li>
+        {% endif %}
         {% endfor %}
     </ul>
     </nav>
