@@ -22,6 +22,12 @@
   color: #fff;
   max-width: 400px;
 }
+.card img {
+  transition: transform 0.3s ease-in-out;
+}
+.card:hover img {
+  transform: scale(1.2);
+}
 .card a {
   color: #fff;
 }

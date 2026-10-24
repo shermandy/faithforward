@@ -2,7 +2,7 @@
 .rich-text {
   padding: 1rem 1.5rem;
 }
-.rich-text p {
+.rich-text .container {
   max-width: 65ch;
   margin: 0 auto 1rem;
 }
