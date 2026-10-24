@@ -252,3 +252,37 @@ collections:
         name: "volunteer"
         file: "content/volunteer.md"
         fields: *standard_modular_fields
+  - name: "events"
+    label: "Events"
+    folder: "content/events" # Path where event markdown files will be saved
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    editor:
+      preview: true
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - {
+          label: "Start Date & Time",
+          name: "event_date",
+          widget: "datetime",
+          format: "YYYY-MM-DD HH:mm",
+          date_format: "YYYY-MM-DD",
+          time_format: "HH:mm",
+        }
+      - {
+          label: "End Date & Time",
+          name: "event_end_date",
+          widget: "datetime",
+          format: "YYYY-MM-DD HH:mm",
+          date_format: "YYYY-MM-DD",
+          time_format: "HH:mm",
+          required: false,
+        }
+      - {
+          label: "Location",
+          name: "location",
+          widget: "string",
+          required: false,
+        }
+      - { label: "Summary", name: "summary", widget: "text", required: false }
+      - { label: "Body", name: "body", widget: "markdown" }

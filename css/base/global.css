@@ -9,3 +9,7 @@ body {
   margin: 0;
   font-family: "Roboto Condensed", sans-serif;
 }
+.page-header {
+  padding: 1rem 1.5rem;
+  text-align: center;
+}

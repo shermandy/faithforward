@@ -4,8 +4,11 @@
 @import "base/global.css";
 @import "base/buttons.css";
 
+@import "events.css";
+
 /* Global Layout Components */
 @import "components/header.css";
+@import "components/footer.css";
 
 /* Modular Block Sections */
 @import "blocks/three_card.css";

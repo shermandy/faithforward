@@ -19,9 +19,16 @@
   text-shadow: 0px 1px 0px var(--secondary-button-text-shadow);
   color: #312a1c;
 }
+.button.tertiary {
+  background-color: #e6e6e6;
+  border: 1px solid #ffffff;
+  text-shadow: 0px 1px 0px #bababa;
+  color: #312a1c;
+}
 
 /* hover */
-.button.primary:hover, .card:hover .card-cta {
+.button.primary:hover,
+.card:hover .card-cta {
   background-color: var(--primary-button-hover-bg);
   border: 1px solid var(--primary-button-hover-border);
 }
@@ -29,4 +36,7 @@
   background-color: var(--secondary-button-hover-bg);
   border: 1px solid var(--secondary-button-hover-border);
   color: var(--secondary-button-hover-color);
+}
+.button.small {
+  padding: 0.25rem 0.75rem;
 }

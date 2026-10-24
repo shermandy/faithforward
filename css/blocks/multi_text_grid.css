@@ -17,16 +17,21 @@
 .multi-text-grid .grid-3-col {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-around;
   gap: 2rem;
 }
 
 /* Grid Cards (Calculated for 3 per row) */
 .multi-text-grid .grid-card {
-  flex: 0 1 calc((100% - 4rem) / 3);
+  flex: 0 1 calc((100% - 6rem) / 4);
   box-sizing: border-box;
 }
-
+/* .multi-text-grid .grid-card p {
+  margin: 0 0 5px;
+} */
+.multi-text-grid .grid-card h3 {
+  margin: 0 0 5px;
+}
 /* Responsive adjustment for tablet/mobile */
 @media (max-width: 900px) {
   .multi-text-grid .grid-card {

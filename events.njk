@@ -1,0 +1,53 @@
+---
+layout: layout.njk
+title: Events
+permalink: /events/
+tags: nav
+navOrder: 3
+---
+
+<section class="events-section">
+  <div class="container">
+    <h1 class="page-title">Upcoming Events</h1>
+
+    <div class="events-grid">
+      {% for event in collections.events %}
+        <article class="event-card">
+          {% if event.data.image %}
+            <div class="event-image">
+              <img src="{{ event.data.image }}" alt="{{ event.data.image_alt | default(event.data.title) }}">
+            </div>
+          {% endif %}
+
+          <div class="event-details">
+            <h2 class="event-title">
+              <a href="{{ event.url }}">{{ event.data.title }}</a>
+            </h2>
+
+            <div class="event-meta">
+      {% if event.data.event_date %}
+  <p class="event-date">
+    <strong>Date & Time:</strong> {{ event.data.event_date | formatEventDates(event.data.event_end_date) }}
+  </p>
+{% endif %}
+
+      {% if event.data.location %}
+        <p class="event-location">
+          <strong>Location:</strong> {{ event.data.location }}
+        </p>
+      {% endif %}
+    </div>
+
+            {% if event.data.summary %}
+              <p class="event-summary">{{ event.data.summary }}</p>
+            {% endif %}
+
+            <a href="{{ event.url }}" class="button primary">Event Details</a>
+          </div>
+        </article>
+      {% else %}
+        <p>No upcoming events scheduled at this time. Check back soon!</p>
+      {% endfor %}
+    </div>
+  </div>
+</section>

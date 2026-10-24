@@ -3,12 +3,390 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Faith Forward Content Management System</title>
-    <!-- Include Netlify Identity Widget -->
+    <title>Content Management System</title>
     <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
   </head>
   <body>
-    <!-- Decap CMS -->
+    <!-- Decap CMS Script -->
     <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+
+    <script>
+      // 1. Inject live CSS stylesheet
+      CMS.registerPreviewStyle("/css/style.css");
+
+      // Helper function to safely parse Markdown into HTML
+      function parseMd(text) {
+        if (!text) return { __html: "" };
+        return { __html: window.marked.parse(String(text)) };
+      }
+
+      // 2. Custom Event Preview Component
+      var EventPreview = createClass({
+        render: function () {
+          var entry = this.props.entry;
+          var title = entry.getIn(["data", "title"]);
+          var date = entry.getIn(["data", "event_date"]);
+          var endDate = entry.getIn(["data", "event_end_date"]);
+          var location = entry.getIn(["data", "location"]);
+          var summary = entry.getIn(["data", "summary"]);
+          var body = this.props.widgetFor("body");
+
+          return h(
+            "article",
+            { className: "event-detail" },
+            h(
+              "header",
+              { className: "event-header" },
+              h("h1", {}, title),
+              h(
+                "div",
+                { className: "event-meta" },
+                date
+                  ? h(
+                      "p",
+                      {},
+                      h("strong", {}, "Date & Time: "),
+                      date + (endDate ? " – " + endDate : ""),
+                    )
+                  : null,
+                location
+                  ? h("p", {}, h("strong", {}, "Location: "), location)
+                  : null,
+              ),
+            ),
+            summary
+              ? h("p", { className: "event-summary" }, h("strong", {}, summary))
+              : null,
+            h("hr", {}),
+            h("div", { className: "event-content" }, body),
+          );
+        },
+      });
+
+      CMS.registerPreviewTemplate("events", EventPreview);
+
+      // 3. Custom Modular Pages Preview Component
+      var PagePreview = createClass({
+        render: function () {
+          var entry = this.props.entry;
+          var blocks = entry.getIn(["data", "blocks"]);
+          var self = this;
+
+          if (!blocks) {
+            return h(
+              "main",
+              {},
+              h("p", { style: { padding: "20px" } }, "No sections added yet."),
+            );
+          }
+
+          return h(
+            "main",
+            {},
+            blocks.map(function (block, index) {
+              var type = block.get("type");
+
+              // HERO BANNER
+              if (type === "hero_banner") {
+                var bgImage = block.get("bg_image");
+                var bgUrl = bgImage
+                  ? self.props.getAsset(bgImage).toString()
+                  : "";
+                var links = block.get("links");
+
+                return h(
+                  "section",
+                  {
+                    key: index,
+                    className: "hero",
+                    style: {
+                      backgroundImage: bgUrl ? "url('" + bgUrl + "')" : "none",
+                      backgroundSize: "cover",
+                      backgroundPosition: "center",
+                    },
+                  },
+                  h(
+                    "div",
+                    { className: "hero-text" },
+                    block.get("heading")
+                      ? h("h2", {}, block.get("heading"))
+                      : null,
+                    block.get("content")
+                      ? h("div", {
+                          dangerouslySetInnerHTML: parseMd(
+                            block.get("content"),
+                          ),
+                        })
+                      : null,
+                    links
+                      ? h(
+                          "div",
+                          { className: "hero-buttons" },
+                          links.map(function (link, lIdx) {
+                            return h(
+                              "a",
+                              {
+                                key: lIdx,
+                                href: link.get("url") || "#",
+                                className:
+                                  "button " +
+                                  (link.get("button_color") || "primary"),
+                                target: link.get("target") || "_self",
+                              },
+                              link.get("text"),
+                            );
+                          }),
+                        )
+                      : null,
+                  ),
+                );
+              }
+
+              // RICH TEXT SECTION
+              if (type === "rich_text") {
+                var textAlign = block.get("text_align") || "left";
+                var bgColor = block.get("bg_color") || "white";
+                var bgClass = bgColor !== "white" ? " bg-" + bgColor : "";
+
+                return h(
+                  "section",
+                  {
+                    key: index,
+                    className: "rich-text" + bgClass + " text-" + textAlign,
+                  },
+                  h("div", {
+                    className: "container",
+                    dangerouslySetInnerHTML: parseMd(block.get("body")),
+                  }),
+                );
+              }
+
+              // MULTI-TEXT GRID
+              if (type === "multi_text_grid") {
+                var bgColor = block.get("bg_color") || "white";
+                var bgClass = bgColor !== "white" ? " bg-" + bgColor : "";
+                var sections = block.get("text_sections");
+
+                return h(
+                  "section",
+                  { key: index, className: "multi-text-grid" + bgClass },
+                  h(
+                    "div",
+                    { className: "container" },
+                    block.get("section_heading")
+                      ? h(
+                          "h2",
+                          { className: "section-title" },
+                          block.get("section_heading"),
+                        )
+                      : null,
+                    sections
+                      ? h(
+                          "div",
+                          { className: "grid-3-col" },
+                          sections.map(function (sec, sIdx) {
+                            return h(
+                              "div",
+                              { key: sIdx, className: "grid-card" },
+                              sec.get("heading")
+                                ? h("h3", {}, sec.get("heading"))
+                                : null,
+                              h("div", {
+                                className: "card-body",
+                                dangerouslySetInnerHTML: parseMd(
+                                  sec.get("body"),
+                                ),
+                              }),
+                            );
+                          }),
+                        )
+                      : null,
+                  ),
+                );
+              }
+
+              // IMAGE CARD GRID
+              if (type === "image_card_grid") {
+                var cards = block.get("cards");
+
+                return h(
+                  "section",
+                  { key: index, className: "image-card-grid" },
+                  block.get("section_heading")
+                    ? h(
+                        "h2",
+                        { className: "section-title" },
+                        block.get("section_heading"),
+                      )
+                    : null,
+                  cards
+                    ? h(
+                        "div",
+                        { className: "image-card-container" },
+                        cards.map(function (card, cIdx) {
+                          var img = card.get("image");
+                          var imgUrl = img
+                            ? self.props.getAsset(img).toString()
+                            : "";
+
+                          return h(
+                            "div",
+                            { key: cIdx, className: "card" },
+                            h(
+                              "a",
+                              {
+                                href: card.get("card_url") || "#",
+                                className: "card-link-wrapper",
+                              },
+                              card.get("heading")
+                                ? h("h3", {}, card.get("heading"))
+                                : null,
+                              imgUrl
+                                ? h("img", {
+                                    src: imgUrl,
+                                    alt: card.get("image_alt") || "",
+                                  })
+                                : null,
+                              card.get("body")
+                                ? h("div", {
+                                    className: "card-body",
+                                    dangerouslySetInnerHTML: parseMd(
+                                      card.get("body"),
+                                    ),
+                                  })
+                                : null,
+                              card.get("cta_text")
+                                ? h(
+                                    "span",
+                                    { className: "card-cta button primary" },
+                                    card.get("cta_text"),
+                                  )
+                                : null,
+                            ),
+                          );
+                        }),
+                      )
+                    : null,
+                );
+              }
+
+              // THREE CARD SECTION
+              if (type === "three_cards") {
+                var cards = block.get("cards");
+
+                return h(
+                  "section",
+                  { key: index, className: "three-card-section" },
+                  h(
+                    "div",
+                    { className: "container" },
+                    block.get("heading")
+                      ? h("h2", {}, block.get("heading"))
+                      : null,
+                    cards
+                      ? h(
+                          "div",
+                          { className: "grid-3-col" },
+                          cards.map(function (card, cIdx) {
+                            return h(
+                              "div",
+                              { key: cIdx, className: "grid-card" },
+                              card.get("title")
+                                ? h("h3", {}, card.get("title"))
+                                : null,
+                              card.get("content")
+                                ? h("div", {
+                                    className: "card-body",
+                                    dangerouslySetInnerHTML: parseMd(
+                                      card.get("content"),
+                                    ),
+                                  })
+                                : null,
+                              card.get("link")
+                                ? h(
+                                    "a",
+                                    {
+                                      href: card.get("link"),
+                                      className: "button primary",
+                                    },
+                                    "Learn More",
+                                  )
+                                : null,
+                            );
+                          }),
+                        )
+                      : null,
+                  ),
+                );
+              }
+
+              return h(
+                "div",
+                {
+                  key: index,
+                  style: { padding: "10px", border: "1px dashed #ccc" },
+                },
+                "Block type: " + type,
+              );
+            }),
+          );
+        },
+      });
+
+      // Register preview template for file-based page entries
+      CMS.registerPreviewTemplate("home", PagePreview);
+      CMS.registerPreviewTemplate("about", PagePreview);
+      CMS.registerPreviewTemplate("media", PagePreview);
+      CMS.registerPreviewTemplate("services", PagePreview);
+      CMS.registerPreviewTemplate("donate", PagePreview);
+      CMS.registerPreviewTemplate("volunteer", PagePreview);
+
+      CMS.registerEditorComponent({
+        id: "button",
+        label: "Button Link",
+        fields: [
+          { name: "text", label: "Button Text", widget: "string" },
+          { name: "url", label: "Button URL", widget: "string" },
+          {
+            name: "style",
+            label: "Button Style",
+            widget: "select",
+            options: [
+              { label: "Primary", value: "primary" },
+              { label: "Secondary", value: "secondary" },
+            ],
+            default: "primary",
+          },
+        ],
+        toBlock: function (obj) {
+          var url = obj.url || "#";
+          var isExternal = /^https?:\/\//i.test(url);
+          var targetAttr = isExternal
+            ? ' target="_blank" rel="noopener noreferrer"'
+            : "";
+
+          return `<a href="${url}" class="button ${obj.style || "primary"}"${targetAttr}>${obj.text || "Click Here"}</a>`;
+        },
+        fromBlock: function (match) {
+          return {
+            url: match[1],
+            style: match[2],
+            text: match[3],
+          };
+        },
+        pattern:
+          /^<a href="(.*?)" class="button (primary|secondary)"(?: target="_blank" rel="noopener noreferrer")?>(.*?)<\/a>$/,
+        toPreview: function (obj) {
+          var url = obj.url || "#";
+          var isExternal = /^https?:\/\//i.test(url);
+          var targetAttr = isExternal
+            ? ' target="_blank" rel="noopener noreferrer"'
+            : "";
+
+          return `<a href="${url}" class="button ${obj.style || "primary"}"${targetAttr}>${obj.text || "Click Here"}</a>`;
+        },
+      });
+    </script>
   </body>
 </html>

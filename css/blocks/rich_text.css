@@ -1,12 +1,14 @@
 /* Base Rich Text Section Styling */
 .rich-text {
-  padding: 3rem 1.5rem;
+  padding: 1rem 1.5rem;
 }
-.rich-text h2 {
-  margin-top: 0;
+.rich-text p {
+  max-width: 65ch;
+  margin: 0 auto 1rem;
 }
 .rich-text h3 {
   font-size: 150%;
+  margin-bottom: 1rem;
 }
 /* Background Color Variants */
 .rich-text.bg-white {
