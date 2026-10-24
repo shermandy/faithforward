@@ -1,0 +1,223 @@
+.events-section {
+  padding: 1rem 1.5rem;
+}
+
+.events-section .container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.events-section .page-title {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-top: 0;
+  margin-bottom: 3rem;
+}
+
+/* Responsive Grid for Event Cards */
+.events-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 2.5rem;
+}
+
+/* Card Container */
+.event-card {
+  background-color: #ffffff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  transition: box-shadow 0.3s ease;
+}
+
+/* Subtle elevation shadow on hover without moving the card */
+.event-card:hover,
+.event-card:has(.stretched-link:hover) {
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+/* Card Image & Smooth Zoom Animation */
+.event-image {
+  width: 100%;
+  height: 200px;
+  overflow: hidden; /* Contains the zoomed image within the rounded corners */
+  background-color: #f4f4f5;
+}
+
+.event-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease; /* Enables smooth zooming */
+}
+
+/* Scale the image when the card or stretched link is hovered */
+.event-card:hover .event-image img,
+.event-card:has(.stretched-link:hover) .event-image img {
+  transform: scale(1.1);
+}
+
+/* Card Content & Meta */
+.event-details {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.event-title {
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+  font-size: 1.35rem;
+}
+
+.event-title a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.event-meta {
+  font-size: 0.95rem;
+  color: #4b5563;
+  border-bottom: 1px solid #e5e7eb;
+  padding-bottom: 0.75rem;
+  background-color: #f4f4f4;
+  padding: 1rem;
+  border-radius: 6px;
+}
+
+.event-meta p {
+  margin: 0.25rem 0;
+}
+
+.event-summary {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #444;
+  margin: 0 0 1.5rem;
+  flex-grow: 1; /* Pushes the button to the bottom of cards equal height */
+}
+
+.stretched-link::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.event-action {
+  align-self: flex-start;
+  margin-top: auto;
+}
+
+/* Single Event Page Styles */
+.single-event {
+  padding: 4rem 1.5rem;
+}
+
+.single-event .container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.event-header {
+  margin-bottom: 2rem;
+}
+
+.event-header h1 {
+  font-size: 2.75rem;
+  margin-top: 0;
+  margin-bottom: 1rem;
+  color: black;
+  text-transform: none;
+}
+
+.event-featured-image {
+  width: 100%;
+  max-height: 450px;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 2.5rem;
+}
+
+.event-featured-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.event-body {
+  font-size: 1.125rem;
+  line-height: 1.7;
+  color: #1a1a1a;
+  margin-bottom: 3rem;
+}
+
+.event-footer {
+  border-top: 1px solid #e5e7eb;
+  padding-top: 2rem;
+}
+
+.event-detail {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+.back-link {
+  display: inline-block;
+  margin-bottom: 1rem;
+  color: #0066cc;
+  text-decoration: none;
+}
+
+.back-link:hover {
+  text-decoration: underline;
+}
+
+.event-content {
+  line-height: 1.6;
+  margin-top: 1.5rem;
+}
+
+.event-calendar-links {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-top: 0.75rem;
+}
+
+.cal-btn {
+  display: inline-block;
+  padding: 0.4rem 0.8rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: background-color 0.2s ease;
+}
+
+.gcal-btn {
+  background-color: #4285f4;
+  color: #ffffff;
+}
+
+.gcal-btn:hover {
+  background-color: #3367d6;
+}
+
+.ics-btn {
+  background-color: #f1f3f4;
+  color: #3c4043;
+  border: 1px solid #dadce0;
+}
+
+.ics-btn:hover {
+  background-color: #e8eaed;
+}

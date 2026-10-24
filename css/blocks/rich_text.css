@@ -5,6 +5,11 @@
 .rich-text .container {
   max-width: 65ch;
   margin: 0 auto 1rem;
+  display: grid;
+  grid-template-columns: 1fr 12fr 1fr;
+}
+.rich-text .container > * {
+  grid-column: 2/3;
 }
 .rich-text h3 {
   font-size: 150%;
@@ -40,11 +45,13 @@
 .rich-text.text-right {
   text-align: right;
 }
-.alert-box {
+.rich-text .alert-box {
   padding: 1rem;
   border: 1px solid rgb(190, 98, 98);
   background-color: rgb(250, 221, 221);
   border-radius: 10px;
+  margin-bottom: 1rem;
+  grid-column: 1/4;
 }
 .alert-box p {
   margin: 0 0 1rem;
