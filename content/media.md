@@ -34,4 +34,10 @@ blocks:
 
 
       ![22 The Point Interview](/images/22-the-point.jpg "22 The Point Interview")
+
+
+      ## WTAE Interview
+
+
+      ![WTAE Interview Photo](/images/wtae.jpg "WTAE Interview Photo")
 ---
