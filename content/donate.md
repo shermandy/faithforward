@@ -5,4 +5,3 @@ navOrder: 4
 layout: layout.njk
 permalink: /donate/
 ---
-Donate!

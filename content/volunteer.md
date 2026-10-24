@@ -5,4 +5,3 @@ navOrder: 6
 layout: layout.njk
 permalink: /volunteer/
 ---
-Volunteer!
