@@ -28,4 +28,10 @@ blocks:
 
 
       <a href="https://www.youtube.com/watch?v=f8hrU-lxZvA" class="button primary" target="_blank" rel="noopener noreferrer">Watch Episode</a>
+
+
+      ## 22 The Point
+
+
+      ![22 The Point Interview](/images/22-the-point.jpg "22 The Point Interview")
 ---
