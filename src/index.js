@@ -1,5 +1,5 @@
 export default {
-  async fetch(request, env) {
+  async fetch(request, env, ctx) {
     const url = new URL(request.url);
 
     // Handle /api/auth
@@ -59,7 +59,7 @@ export default {
       });
     }
 
-    // For all other requests, Cloudflare automatically serves your static files from _site
-    return new Response("Not found", { status: 404 });
+    // Fall back to serving your static Eleventy files for all other URLs
+    return env.ASSETS.fetch(request);
   },
 };
