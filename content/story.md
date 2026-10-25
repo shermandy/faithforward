@@ -9,10 +9,10 @@ blocks:
     text_align: left
     bg_color: white
     body: >-
-      At Faith Forward Ministries, Inc., we believe that no one is defined by
-      their past, their struggles, or a number on a client file. We see
-      individuals. We see families. And above all, we see a future filled with
-      hope.
+      ## Our Story
+
+
+      At Faith Forward Ministries, Inc., we believe that no one is defined by their past, their struggles, or a number on a client file. We see individuals. We see families. And above all, we see a future filled with hope.
 
 
       ![Project Stand](/images/project_stand.jpg "Project Stand")
