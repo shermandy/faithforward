@@ -79,7 +79,7 @@ blocks:
       * Resource Referral Network: Acting as a bridge to other regional resources, helping individuals navigate housing assistance, medical care, and detox/rehabilitation placements.
   - type: media_box
     image_position: right
-    background_color: dark-green
+    background_color: amber
     image: /images/project_stand.jpg
     heading: Project Stand
     content: Lorem ipsum dolor sit amet consectetur adipiscing elit qui
