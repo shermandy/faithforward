@@ -79,7 +79,7 @@ blocks:
       * Resource Referral Network: Acting as a bridge to other regional resources, helping individuals navigate housing assistance, medical care, and detox/rehabilitation placements.
   - heading: Project Stand
     button_url: https://google.com
-    button_style: secondary
+    button_style: tertiary
     image_alt: Project Stand Team
     image_position: right
     background_color: amber
