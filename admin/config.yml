@@ -1,6 +1,9 @@
 backend:
-  name: git-gateway
-  site_domain: faithforwardpa.netlify.app
+  name: github
+  repo: shermandy/faithforward
+  branch: main
+  base_url: https://www.faithforwardpa.com
+  auth_endpoint: /api/auth
 
 # Link to your live site displayed in the admin header
 display_url: https://faithforwardpa.com
