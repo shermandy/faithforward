@@ -9,7 +9,7 @@ blocks:
     text_align: left
     bg_color: white
     body: >-
-      ### Support Our Mission: Give Hope, Change Lives
+      ## Support Our Mission: Give Hope, Change Lives
 
 
       At Faith Forward Ministries, Inc., we operate entirely on community donations and the tireless hearts of volunteers. We have no paid staff. This means 100% of your financial support goes directly into our community programs, providing immediate relief, professional counseling, and safe havens for families in crisis.
