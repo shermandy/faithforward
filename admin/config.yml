@@ -1,8 +1,6 @@
 backend:
-  name: github
-  repo: shermandy/faithforward
-  branch: main
-  base_url: https://decap-bridge.vercel.app
+  name: git-gateway
+  site_domain: https://faithforwardpa.netlify.app
 
 # Link to your live site displayed in the admin header
 display_url: https://faithforwardpa.com
