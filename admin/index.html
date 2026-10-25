@@ -142,12 +142,13 @@
                   ),
                 );
               }
-              // IMAGE & CONTENT BOX
+              // IMAGE & CONTENT BOX (inside PagePreview)
               if (type === "media_box") {
                 var img = block.get("image");
                 var imgUrl = img ? self.props.getAsset(img).toString() : "";
                 var position = block.get("image_position") || "left";
                 var bgColor = block.get("background_color") || "white";
+                var btnStyle = block.get("button_style") || "primary"; // <--- Add this line
 
                 var colors = {
                   white: { bg: "#ffffff", border: "#e5e7eb", text: "#1a1a1a" },
@@ -171,9 +172,11 @@
                   btnUrl && btnText
                     ? '<p><a href="' +
                       btnUrl +
-                      '" class="button primary">' +
+                      '" class="button ' +
+                      btnStyle +
+                      '">' +
                       btnText +
-                      "</a></p>"
+                      "</a></p>" // <--- Uses dynamic btnStyle here
                     : "";
 
                 return h(
@@ -205,7 +208,10 @@
                     imgUrl
                       ? h("img", {
                           src: imgUrl,
-                          alt: block.get("heading") || "",
+                          alt:
+                            block.get("image_alt") ||
+                            block.get("heading") ||
+                            "",
                           style: { width: "100%", borderRadius: "8px" },
                         })
                       : null,
@@ -624,7 +630,7 @@
           const colors = {
             white: { bg: "#ffffff", border: "#e5e7eb", text: "#1a1a1a" },
             "light-grey": { bg: "#f8fafc", border: "#cbd5e1", text: "#1a1a1a" },
-            amber: { bg: "#fffbeb", border: "#fde68a", text: "#1a1a1a" },
+            amber: { bg: "#d59874", text: "#000000" },
             "dark-green": { bg: "#064e3b", border: "#047857", text: "#ffffff" },
           };
           const currentTheme = colors[bgColor] || colors.white;
