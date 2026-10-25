@@ -1,7 +1,7 @@
 <div class="media-box media-box--{{ block.image_position | default('left') }} media-box--bg-{{ block.background_color | default('white') }}">
     <div class="media-box__image">
       {% if block.image %}
-        <img src="{{ block.image }}" alt="{{ block.heading | default('') }}">
+        <img src="{{ block.image }}" alt="{{ block.image_alt | default(block.heading) }}">
       {% endif %}
     </div>
     
@@ -14,7 +14,7 @@
       
       {% if block.button_url and block.button_text %}
         <p>
-          <a href="{{ block.button_url }}" class="button primary">{{ block.button_text }}</a>
+          <a href="{{ block.button_url }}" class="button {{ block.button_style | default('primary') }}">{{ block.button_text }}</a>
         </p>
       {% endif %}
     </div>

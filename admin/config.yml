@@ -206,6 +206,13 @@ collections:
                 fields:
                   - { label: "Image", name: "image", widget: "image" }
                   - {
+                      label: "Image Alt Text",
+                      name: "image_alt",
+                      widget: "string",
+                      required: false,
+                      hint: "Describe the image for screen readers and SEO",
+                    }
+                  - {
                       label: "Image Position",
                       name: "image_position",
                       widget: "select",
@@ -237,6 +244,19 @@ collections:
                       label: "Button URL",
                       name: "button_url",
                       widget: "string",
+                      required: false,
+                    }
+                  - {
+                      label: "Button Style",
+                      name: "button_style",
+                      widget: "select",
+                      options:
+                        [
+                          { label: "Primary", value: "primary" },
+                          { label: "Secondary", value: "secondary" },
+                          { label: "Tertiary", value: "tertiary" },
+                        ],
+                      default: "primary",
                       required: false,
                     }
       - label: "Our Story"

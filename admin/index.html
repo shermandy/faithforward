@@ -156,7 +156,7 @@
                     border: "#cbd5e1",
                     text: "#1a1a1a",
                   },
-                  amber: { bg: "#fffbeb", border: "#fde68a", text: "#1a1a1a" },
+                  amber: { bg: "#d59874", text: "#000000" },
                   "dark-green": {
                     bg: "#064e3b",
                     border: "#047857",
@@ -511,6 +511,12 @@
             widget: "image",
           },
           {
+            name: "imageAlt",
+            label: "Image Alt Text",
+            widget: "string",
+            required: false,
+          },
+          {
             name: "imagePosition",
             label: "Image Position",
             widget: "select",
@@ -554,18 +560,33 @@
             widget: "string",
             required: false,
           },
+          {
+            name: "buttonStyle",
+            label: "Button Style",
+            widget: "select",
+            options: [
+              { label: "Primary", value: "primary" },
+              { label: "Secondary", value: "secondary" },
+              { label: "Tertiary", value: "tertiary" },
+            ],
+            default: "primary",
+            required: false,
+          },
         ],
         toBlock: function (obj) {
           const position = obj.imagePosition || "left";
           const bgColor = obj.backgroundColor || "white";
+          const btnStyle = obj.buttonStyle || "primary";
+          const altText = obj.imageAlt || obj.heading || "";
+
           const buttonHtml =
             obj.buttonUrl && obj.buttonText
-              ? `<p><a href="${obj.buttonUrl}" class="button primary">${obj.buttonText}</a></p>`
+              ? `<p><a href="${obj.buttonUrl}" class="button ${btnStyle}">${obj.buttonText}</a></p>`
               : "";
 
           return `<div class="media-box media-box--${position} media-box--bg-${bgColor}">
   <div class="media-box__image">
-    <img src="${obj.image || ""}" alt="${obj.heading || ""}">
+    <img src="${obj.image || ""}" alt="${altText}">
   </div>
   <div class="media-box__content">
     <h3>${obj.heading || ""}</h3>
@@ -579,23 +600,27 @@
             imagePosition: match[1],
             backgroundColor: match[2],
             image: match[3],
-            heading: match[4],
-            content: match[5].trim(),
-            buttonUrl: match[6] || "",
-            buttonText: match[7] || "",
+            imageAlt: match[4] || "",
+            heading: match[5],
+            content: match[6].trim(),
+            buttonUrl: match[7] || "",
+            buttonStyle: match[8] || "primary",
+            buttonText: match[9] || "",
           };
         },
         pattern:
-          /^<div class="media-box media-box--(left|right) media-box--bg-(white|light-grey|amber|dark-green)">\s*<div class="media-box__image">\s*<img src="(.*?)".*?>\s*<\/div>\s*<div class="media-box__content">\s*<h3>(.*?)<\/h3>\s*<div>([\s\S]*?)<\/div>(?:\s*<p><a href="(.*?)" class="button primary">(.*?)<\/a><\/p>)?\s*<\/div>\s*<\/div>$/,
+          /^<div class="media-box media-box--(left|right) media-box--bg-(white|light-grey|amber|dark-green)">\s*<div class="media-box__image">\s*<img src="(.*?)" alt="(.*?)">\s*<\/div>\s*<div class="media-box__content">\s*<h3>(.*?)<\/h3>\s*<div>([\s\S]*?)<\/div>(?:\s*<p><a href="(.*?)" class="button (primary|secondary|tertiary)">(.*?)<\/a><\/p>)?\s*<\/div>\s*<\/div>$/,
         toPreview: function (obj) {
           const position = obj.imagePosition || "left";
           const bgColor = obj.backgroundColor || "white";
+          const btnStyle = obj.buttonStyle || "primary";
+          const altText = obj.imageAlt || obj.heading || "";
+
           const buttonHtml =
             obj.buttonUrl && obj.buttonText
-              ? `<p><a href="${obj.buttonUrl}" class="button primary">${obj.buttonText}</a></p>`
+              ? `<p><a href="${obj.buttonUrl}" class="button ${btnStyle}">${obj.buttonText}</a></p>`
               : "";
 
-          // Quick inline styling for the CMS preview window
           const colors = {
             white: { bg: "#ffffff", border: "#e5e7eb", text: "#1a1a1a" },
             "light-grey": { bg: "#f8fafc", border: "#cbd5e1", text: "#1a1a1a" },
@@ -604,12 +629,12 @@
           };
           const currentTheme = colors[bgColor] || colors.white;
 
-          return `<div class="media-box media-box--${position}" style="display: flex; gap: 2rem; align-items: center; margin: 2rem 0; padding: 2rem; border-radius: 12px; background-color: ${currentTheme.bg}; border: 1px solid ${currentTheme.border}; color: ${currentTheme.text}; flex-direction: ${position === "right" ? "row-reverse" : "row"};">
+          return `<div class="media-box media-box--${position}" style="display: flex; gap: 2rem; align-items: center; margin: 2rem 0; padding: 2.5rem; border-radius: 12px; background-color: ${currentTheme.bg}; border: 1px solid ${currentTheme.border}; color: ${currentTheme.text}; flex-direction: ${position === "right" ? "row-reverse" : "row"};">
   <div class="media-box__image" style="flex: 1;">
-    <img src="${obj.image || ""}" alt="${obj.heading || ""}" style="width: 100%; border-radius: 8px;">
+    <img src="${obj.image || ""}" alt="${altText}" style="width: 100%; border-radius: 8px;">
   </div>
   <div class="media-box__content" style="flex: 1;">
-    <h3 style="color: ${currentTheme.text};">${obj.heading || ""}</h3>
+    <h3 style="color: ${currentTheme.text}; margin-top: 0;">${obj.heading || ""}</h3>
     <div>${obj.content || ""}</div>
     ${buttonHtml}
   </div>
