@@ -1,6 +1,6 @@
 backend:
   name: git-gateway
-  site_domain: faithforwardpa.netlify.app
+  site_domain: www.faithforwardpa.com
 
 # Link to your live site displayed in the admin header
 display_url: https://faithforwardpa.com
