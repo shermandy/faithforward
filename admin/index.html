@@ -4,10 +4,21 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Content Management System</title>
+
+    <!-- Netlify Identity Widget -->
     <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
   </head>
   <body>
+    <!-- Initialize Netlify Identity to point directly to your Netlify instance -->
+    <script>
+      if (window.netlifyIdentity) {
+        window.netlifyIdentity.init({
+          APIUrl: "https://faithforwardpa.netlify.app/.netlify/identity",
+        });
+      }
+    </script>
+
     <!-- Decap CMS Script -->
     <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
 
@@ -148,7 +159,7 @@
                 var imgUrl = img ? self.props.getAsset(img).toString() : "";
                 var position = block.get("image_position") || "left";
                 var bgColor = block.get("background_color") || "white";
-                var btnStyle = block.get("button_style") || "primary"; // <--- Add this line
+                var btnStyle = block.get("button_style") || "primary";
 
                 var colors = {
                   white: { bg: "#ffffff", border: "#e5e7eb", text: "#1a1a1a" },
@@ -175,7 +186,7 @@
                       btnStyle +
                       '">' +
                       btnText +
-                      "</a></p>" // <--- Uses dynamic btnStyle here
+                      "</a></p>"
                     : "";
 
                 return h(
@@ -480,7 +491,7 @@
           return `<a href="${url}" class="button ${obj.style || "primary"}"${targetAttr}>${obj.text || "Click Here"}</a>`;
         },
       });
-      // add alert box to rich text component
+
       CMS.registerEditorComponent({
         id: "alert",
         label: "Alert Box",
@@ -489,7 +500,7 @@
             name: "content",
             label: "Alert Message",
             widget: "markdown",
-            buttons: ["bold", "italic", "link"], // Optional: limits toolbar to basic formatting
+            buttons: ["bold", "italic", "link"],
             minimal: true,
           },
         ],
@@ -506,15 +517,12 @@
           return `<div class="alert-box">${obj.content || ""}</div>`;
         },
       });
+
       CMS.registerEditorComponent({
         id: "mediaBox",
         label: "Image & Content Box",
         fields: [
-          {
-            name: "image",
-            label: "Image",
-            widget: "image",
-          },
+          { name: "image", label: "Image", widget: "image" },
           {
             name: "imageAlt",
             label: "Image Alt Text",
@@ -543,16 +551,8 @@
             ],
             default: "white",
           },
-          {
-            name: "heading",
-            label: "Heading",
-            widget: "string",
-          },
-          {
-            name: "content",
-            label: "Content",
-            widget: "markdown",
-          },
+          { name: "heading", label: "Heading", widget: "string" },
+          { name: "content", label: "Content", widget: "markdown" },
           {
             name: "buttonText",
             label: "Button Text (Optional)",
