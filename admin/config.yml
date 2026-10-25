@@ -1,5 +1,6 @@
 backend:
-  name: git-gateway
+  name: github
+  repo: shermandy/faithforward
   branch: main
 
 # Link to your live site displayed in the admin header
