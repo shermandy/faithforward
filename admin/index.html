@@ -4,6 +4,8 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Content Management System</title>
+    <!-- Marked Markdown Parser CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
   </head>
   <body>
     <!-- Decap CMS Script -->
@@ -13,9 +15,20 @@
       // 1. Inject live CSS stylesheet
       CMS.registerPreviewStyle("/css/style.css");
 
-      // Helper function to safely parse Markdown into HTML
+      // Bulletproof Markdown helper function
       function parseMd(text) {
         if (!text) return { __html: "" };
+
+        // If it's an object or array (like a list widget), stringify it safely instead of crashing
+        if (typeof text === "object") {
+          text = JSON.stringify(text, null, 2);
+        }
+
+        // Fallback if the marked library failed to load
+        if (!window.marked || typeof window.marked.parse !== "function") {
+          return { __html: String(text) };
+        }
+
         return { __html: window.marked.parse(String(text)) };
       }
 
