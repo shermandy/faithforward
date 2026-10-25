@@ -8,5 +8,8 @@
   "devDependencies": {
     "@11ty/eleventy": "^3.0.0",
     "markdown-it": "^15.0.1"
+  },
+  "dependencies": {
+    "markdown-it-for-inline": "^2.0.1"
   }
 }
