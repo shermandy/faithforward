@@ -1,0 +1,61 @@
+---
+layout: layout.njk
+---
+
+<article class="event-detail">
+  <header class="event-header">
+    <a href="/events/" class="back-link">&larr; Back to All Events</a>
+    <h1>{{ title }}</h1>
+    
+    <div class="event-meta">
+  {% if event_date %}
+    <p class="event-date">
+      <strong>Date & Time:</strong> {{ event_date | formatEventDates(event_end_date) }}
+    </p>
+  {% endif %}
+
+  {% if location %}
+    <p class="event-location">
+      <strong>Location:</strong> {{ location }}
+    </p>
+  {% endif %}
+
+  {% if event_date %}
+  <div class="event-calendar-links">
+    <a 
+      href="{{ { title: title, event_date: event_date, event_end_date: event_end_date, summary: summary, location: location } | gcalUrl }}" 
+      target="_blank" 
+      rel="noopener noreferrer"
+      class="button primary small"
+    >
+      + Add to Google Calendar
+    </a>
+
+    <a 
+      href="{{ { title: title, event_date: event_date, event_end_date: event_end_date, summary: summary, location: location } | icsUrl }}" 
+      download="{{ title | slugify }}.ics"
+      class="button primary small"
+    >
+      Download iCal (.ics)
+    </a>
+  </div>
+{% endif %}
+</div>
+  </header>
+
+  {% if image %}
+    <div class="event-featured-image">
+      <img src="{{ image }}" alt="{{ title }}">
+    </div>
+  {% endif %}
+
+  {% if summary %}
+    <p class="event-summary"><strong>{{ summary }}</strong></p>
+  {% endif %}
+
+  <hr>
+
+  <div class="event-content">
+    {{ content | safe }}
+  </div>
+</article>

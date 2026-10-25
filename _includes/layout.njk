@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Faith Forward</title>
+    <title>{% if title %}{{ title }} | Faith Forward{% else %}Faith Forward{% endif %}</title>
     <link rel="stylesheet" href="/css/style.css">
     <script src="/assets/js/menu.js" defer></script>
   </head>
@@ -11,12 +11,7 @@
     {% include "components/header.njk" %}
     <main>
       <!-- Renders standard Markdown body content if present -->
-       <!-- Render an <h1> title on internal pages, but skip it on the Home page -->
-      {% if title and page.url !== "/" %}
-        <header class="page-header container">
-          <h2>{{ title }}</h2>
-        </header>
-      {% endif %}
+       
       {% if content %}
         <div class="page-body">
           {{ content | safe }}
