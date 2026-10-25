@@ -35,7 +35,7 @@ export default {
 
       if (!token) {
         return new Response(
-          JSON.stringify({ error: "Failed to obtain token" }),
+          JSON.stringify({ error: "Failed to obtain token", details: data }),
           { status: 400 },
         );
       }
