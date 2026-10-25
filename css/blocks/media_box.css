@@ -46,7 +46,7 @@
 .media-box--bg-dark-green h3,
 .media-box--bg-dark-green p,
 .media-box--bg-dark-green li {
-  color: #ffffff;
+  color: var(--secondary);
 }
 
 .media-box__image {
