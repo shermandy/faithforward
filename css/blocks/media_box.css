@@ -3,10 +3,11 @@
   flex-direction: column;
   gap: 2rem;
   align-items: center;
-  margin: 3rem 0;
+  margin: 0 auto 1rem;
   padding: 2.5rem;
   border-radius: 12px;
   box-sizing: border-box;
+  max-width: 85ch;
 }
 
 @media (min-width: 768px) {
@@ -32,14 +33,13 @@
 }
 
 .media-box--bg-amber {
-  background-color: #fffbeb;
+  background-color: var(--tertiary);
   border: 1px solid #fde68a;
 }
 
 .media-box--bg-dark-green {
-  background-color: #064e3b;
-  border: 1px solid #047857;
-  color: #ffffff;
+  background-color: var(--primary-dark);
+  color: var(--secondary);
 }
 
 /* Ensure text elements inherit white text on dark green backgrounds */

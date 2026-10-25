@@ -1,0 +1,21 @@
+<div class="media-box media-box--{{ block.image_position | default('left') }} media-box--bg-{{ block.background_color | default('white') }}">
+    <div class="media-box__image">
+      {% if block.image %}
+        <img src="{{ block.image }}" alt="{{ block.heading | default('') }}">
+      {% endif %}
+    </div>
+    
+    <div class="media-box__content">
+      {% if block.heading %}
+        <h3>{{ block.heading }}</h3>
+      {% endif %}
+      
+      {{ block.content | markdown | safe }}
+      
+      {% if block.button_url and block.button_text %}
+        <p>
+          <a href="{{ block.button_url }}" class="button primary">{{ block.button_text }}</a>
+        </p>
+      {% endif %}
+    </div>
+  </div>
