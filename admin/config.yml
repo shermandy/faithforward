@@ -200,7 +200,45 @@ collections:
                         widget: "string"
                         required: false
                         hint: "Text for the button at the bottom (e.g. Learn More)"
-
+              - label: "Image & Content Box"
+                name: "media_box"
+                widget: "object"
+                fields:
+                  - { label: "Image", name: "image", widget: "image" }
+                  - {
+                      label: "Image Position",
+                      name: "image_position",
+                      widget: "select",
+                      options: ["left", "right"],
+                      default: "left",
+                    }
+                  - {
+                      label: "Background Color",
+                      name: "background_color",
+                      widget: "select",
+                      options:
+                        [
+                          { label: "White", value: "white" },
+                          { label: "Light Grey", value: "light-grey" },
+                          { label: "Amber", value: "amber" },
+                          { label: "Dark Green", value: "dark-green" },
+                        ],
+                      default: "white",
+                    }
+                  - { label: "Heading", name: "heading", widget: "string" }
+                  - { label: "Content", name: "content", widget: "markdown" }
+                  - {
+                      label: "Button Text",
+                      name: "button_text",
+                      widget: "string",
+                      required: false,
+                    }
+                  - {
+                      label: "Button URL",
+                      name: "button_url",
+                      widget: "string",
+                      required: false,
+                    }
       - label: "Our Story"
         name: "about"
         file: "content/story.md"

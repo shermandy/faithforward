@@ -142,7 +142,95 @@
                   ),
                 );
               }
+              // IMAGE & CONTENT BOX
+              if (type === "media_box") {
+                var img = block.get("image");
+                var imgUrl = img ? self.props.getAsset(img).toString() : "";
+                var position = block.get("image_position") || "left";
+                var bgColor = block.get("background_color") || "white";
 
+                var colors = {
+                  white: { bg: "#ffffff", border: "#e5e7eb", text: "#1a1a1a" },
+                  "light-grey": {
+                    bg: "#f8fafc",
+                    border: "#cbd5e1",
+                    text: "#1a1a1a",
+                  },
+                  amber: { bg: "#fffbeb", border: "#fde68a", text: "#1a1a1a" },
+                  "dark-green": {
+                    bg: "#064e3b",
+                    border: "#047857",
+                    text: "#ffffff",
+                  },
+                };
+                var currentTheme = colors[bgColor] || colors.white;
+
+                var btnText = block.get("button_text");
+                var btnUrl = block.get("button_url");
+                var buttonHtml =
+                  btnUrl && btnText
+                    ? '<p><a href="' +
+                      btnUrl +
+                      '" class="button primary">' +
+                      btnText +
+                      "</a></p>"
+                    : "";
+
+                return h(
+                  "section",
+                  {
+                    key: index,
+                    className:
+                      "media-box media-box--" +
+                      position +
+                      " media-box--bg-" +
+                      bgColor,
+                    style: {
+                      display: "flex",
+                      gap: "2rem",
+                      alignItems: "center",
+                      margin: "3rem 0",
+                      padding: "2.5rem",
+                      borderRadius: "12px",
+                      backgroundColor: currentTheme.bg,
+                      border: "1px solid " + currentTheme.border,
+                      color: currentTheme.text,
+                      flexDirection:
+                        position === "right" ? "row-reverse" : "row",
+                    },
+                  },
+                  h(
+                    "div",
+                    { className: "media-box__image", style: { flex: 1 } },
+                    imgUrl
+                      ? h("img", {
+                          src: imgUrl,
+                          alt: block.get("heading") || "",
+                          style: { width: "100%", borderRadius: "8px" },
+                        })
+                      : null,
+                  ),
+                  h(
+                    "div",
+                    { className: "media-box__content", style: { flex: 1 } },
+                    block.get("heading")
+                      ? h(
+                          "h3",
+                          { style: { color: currentTheme.text, marginTop: 0 } },
+                          block.get("heading"),
+                        )
+                      : null,
+                    h("div", {
+                      dangerouslySetInnerHTML: parseMd(block.get("content")),
+                    }),
+                    buttonHtml
+                      ? h("div", {
+                          dangerouslySetInnerHTML: { __html: buttonHtml },
+                        })
+                      : null,
+                  ),
+                );
+              }
               // RICH TEXT SECTION
               if (type === "rich_text") {
                 var textAlign = block.get("text_align") || "left";
@@ -411,6 +499,121 @@
         pattern: /^<div class="alert-box">\s*([\s\S]*?)\s*<\/div>$/,
         toPreview: function (obj) {
           return `<div class="alert-box">${obj.content || ""}</div>`;
+        },
+      });
+      CMS.registerEditorComponent({
+        id: "mediaBox",
+        label: "Image & Content Box",
+        fields: [
+          {
+            name: "image",
+            label: "Image",
+            widget: "image",
+          },
+          {
+            name: "imagePosition",
+            label: "Image Position",
+            widget: "select",
+            options: [
+              { label: "Left", value: "left" },
+              { label: "Right", value: "right" },
+            ],
+            default: "left",
+          },
+          {
+            name: "backgroundColor",
+            label: "Background Color",
+            widget: "select",
+            options: [
+              { label: "White", value: "white" },
+              { label: "Light Grey", value: "light-grey" },
+              { label: "Amber", value: "amber" },
+              { label: "Dark Green", value: "dark-green" },
+            ],
+            default: "white",
+          },
+          {
+            name: "heading",
+            label: "Heading",
+            widget: "string",
+          },
+          {
+            name: "content",
+            label: "Content",
+            widget: "markdown",
+          },
+          {
+            name: "buttonText",
+            label: "Button Text (Optional)",
+            widget: "string",
+            required: false,
+          },
+          {
+            name: "buttonUrl",
+            label: "Button URL (Optional)",
+            widget: "string",
+            required: false,
+          },
+        ],
+        toBlock: function (obj) {
+          const position = obj.imagePosition || "left";
+          const bgColor = obj.backgroundColor || "white";
+          const buttonHtml =
+            obj.buttonUrl && obj.buttonText
+              ? `<p><a href="${obj.buttonUrl}" class="button primary">${obj.buttonText}</a></p>`
+              : "";
+
+          return `<div class="media-box media-box--${position} media-box--bg-${bgColor}">
+  <div class="media-box__image">
+    <img src="${obj.image || ""}" alt="${obj.heading || ""}">
+  </div>
+  <div class="media-box__content">
+    <h3>${obj.heading || ""}</h3>
+    <div>${obj.content || ""}</div>
+    ${buttonHtml}
+  </div>
+</div>`;
+        },
+        fromBlock: function (match) {
+          return {
+            imagePosition: match[1],
+            backgroundColor: match[2],
+            image: match[3],
+            heading: match[4],
+            content: match[5].trim(),
+            buttonUrl: match[6] || "",
+            buttonText: match[7] || "",
+          };
+        },
+        pattern:
+          /^<div class="media-box media-box--(left|right) media-box--bg-(white|light-grey|amber|dark-green)">\s*<div class="media-box__image">\s*<img src="(.*?)".*?>\s*<\/div>\s*<div class="media-box__content">\s*<h3>(.*?)<\/h3>\s*<div>([\s\S]*?)<\/div>(?:\s*<p><a href="(.*?)" class="button primary">(.*?)<\/a><\/p>)?\s*<\/div>\s*<\/div>$/,
+        toPreview: function (obj) {
+          const position = obj.imagePosition || "left";
+          const bgColor = obj.backgroundColor || "white";
+          const buttonHtml =
+            obj.buttonUrl && obj.buttonText
+              ? `<p><a href="${obj.buttonUrl}" class="button primary">${obj.buttonText}</a></p>`
+              : "";
+
+          // Quick inline styling for the CMS preview window
+          const colors = {
+            white: { bg: "#ffffff", border: "#e5e7eb", text: "#1a1a1a" },
+            "light-grey": { bg: "#f8fafc", border: "#cbd5e1", text: "#1a1a1a" },
+            amber: { bg: "#fffbeb", border: "#fde68a", text: "#1a1a1a" },
+            "dark-green": { bg: "#064e3b", border: "#047857", text: "#ffffff" },
+          };
+          const currentTheme = colors[bgColor] || colors.white;
+
+          return `<div class="media-box media-box--${position}" style="display: flex; gap: 2rem; align-items: center; margin: 2rem 0; padding: 2rem; border-radius: 12px; background-color: ${currentTheme.bg}; border: 1px solid ${currentTheme.border}; color: ${currentTheme.text}; flex-direction: ${position === "right" ? "row-reverse" : "row"};">
+  <div class="media-box__image" style="flex: 1;">
+    <img src="${obj.image || ""}" alt="${obj.heading || ""}" style="width: 100%; border-radius: 8px;">
+  </div>
+  <div class="media-box__content" style="flex: 1;">
+    <h3 style="color: ${currentTheme.text};">${obj.heading || ""}</h3>
+    <div>${obj.content || ""}</div>
+    ${buttonHtml}
+  </div>
+</div>`;
         },
       });
     </script>
