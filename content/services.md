@@ -76,4 +76,17 @@ blocks:
       * Random Gifts of Kindness: A boots-on-the-ground outreach initiative where volunteers distribute physical supplies, hygiene kits, clothing, and hope directly to individuals experiencing homelessness or housing insecurity.
 
       * Resource Referral Network: Acting as a bridge to other regional resources, helping individuals navigate housing assistance, medical care, and detox/rehabilitation placements.
+  - type: media_box
+    image_position: right
+    background_color: dark-green
+    image: /images/project_stand.jpg
+    heading: Project Stand
+    content: Lorem ipsum dolor sit amet consectetur adipiscing elit qui
+      reprehenderit voluptatum ut dolor voluptate deserunt corrupti dolore nisi
+      nulla pariatur incididunt excepturi adipiscing cupidatat dolorem laborum
+      vel voluptatum facere accusamus fuga similique temporibus omnis ex
+      deserunt duis et sint quos elit anim voluptas ad deserunt at fugiat quis
+      cumque mollit.
+    button_text: Learn More
+    button_url: https://google.com
 ---
