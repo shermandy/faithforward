@@ -9,6 +9,8 @@ blocks:
     text_align: left
     bg_color: white
     body: >-
+      
+
       <div class="alert-box">
 
 
