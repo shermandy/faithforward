@@ -3,7 +3,7 @@ backend:
   branch: main
 
 # Link to your live site displayed in the admin header
-display_url: https://shermandy9191.netlify.app
+display_url: https://faithforwardpa.com
 
 media_folder: "images"
 public_folder: "/images"
