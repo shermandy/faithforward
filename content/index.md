@@ -119,7 +119,7 @@ blocks:
         image: https://scontent.fagc1-1.fna.fbcdn.net/v/t39.30808-6/481190250_1077403114413373_2675944749526204502_n.jpg?stp=cp6_dst-jpg_tt6&cstp=mx1284x1649&ctp=s1284x1649&_nc_cat=102&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=833d8c&_nc_ohc=TnNwfntcd_kQ7kNvwFAQG7n&_nc_oc=Adp8jUaxZqMKuMlsL1XzU-YKXzTa1b62iOcuD9-mccT0weLz0OmRjDX4vMRAP_BrAZlHfa7I-SBsOZh_yjzOc4Xx&_nc_zt=23&_nc_ht=scontent.fagc1-1.fna&_nc_gid=e6avw8_FUR5v-WBCq2QcxQ&_nc_ss=7d2a8&oh=00_AQQWrQFUa9ZnaSXxm7UN3iRUX4V6bEcPbGvTYmnx67fG8Q&oe=6AEAD0CF
         image_alt: ""
       - heading: Called to Care (missions-at home and overseas)
-        image: https://scontent.fagc1-1.fna.fbcdn.net/v/t39.30808-6/825292267_10245795103513558_4213025268025776741_n.jpg?stp=c0.248.640.640a_dst-jpg_tt6&cstp=mx640x640&ctp=s206x206&_nc_cat=111&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=714c7a&_nc_ohc=OGUipRBwF90Q7kNvwHZhzxJ&_nc_oc=Adq5Mq8dq1KUvyJOQN0RqxWNkfq0kiTzRrSoooc8Cb2DmLvs4riRGMNAI-kQq4pw4p6ungdAFutVvotGdvkJEAZ5&_nc_zt=23&_nc_ht=scontent.fagc1-1.fna&_nc_gid=TlY3DKCk0d1r97MvEGJ7XA&_nc_ss=7d2a8&oh=00_AQRerhqSTGErvcZW9e-LFcbBi6MSRLntlAVMqqYUOT1jlg&oe=6AEADE9D
+        image: https://scontent.fagc1-1.fna.fbcdn.net/v/t39.30808-6/820552820_10245740242862076_3953537236820877325_n.jpg?stp=dst-jpg_tt6&cstp=mx960x960&ctp=s960x960&_nc_cat=106&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=127cfc&_nc_ohc=_CQ9SWBn1FoQ7kNvwHshoCm&_nc_oc=AdoNb5nYw-5hpVnkVIaYzQ0Id2YiWIL3OXVUhVagFZLt9tE2Pw8MxIoksl-9XWhW-Ho6ioV7-ZwgF_iljcHrIssq&_nc_zt=23&_nc_ht=scontent.fagc1-1.fna&_nc_gid=qTvQ5Y0YAyoLyjFbV6iGAw&_nc_ss=7d2a8&oh=00_AQQjbxl4wZKE_K2B74B62ZdWLZs4G5ZoXKqOg_muANXUSA&oe=6AEAC013
   - type: multi_text_grid
     bg_color: light-gray
     section_heading: Books
