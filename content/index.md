@@ -50,17 +50,20 @@ blocks:
     body: |-
       ## Emergency Contact
 
-      ### (724) 539-7900
+      ### (724) 539-7900 or text 724-516-9492
+
+      Faithforwardpa@gmail.com
+
+      angelarms2hope@gmail.com
 
       We are available around the clock to help you!
     bg_color: green
     text_align: center
   - type: multi_text_grid
-    bg_color: amber
+    bg_color: light-gray
     text_sections:
       - heading: Latrobe
         body: |-
-          338 Main Street\
           Latrobe, PA\
           15650
       - heading: Washington
@@ -70,45 +73,53 @@ blocks:
           15301
       - heading: Greensburg
         body: |-
-          123 Main Street\
           Greensburg, PA\
           15601
       - heading: Blairsville
         body: |-
-          123 Main Street\
+          34 n Stewart st \
           Blairsville, PA\
           15717
-    section_heading: Locations
+    section_heading: " Office Locations (we serve surrounding areas)"
   - type: image_card_grid
     section_heading: ""
     cards:
       - heading: Volunteer
-        image: /images/card-1.png
+        image: https://scontent.fagc1-1.fna.fbcdn.net/v/t39.30808-6/473768340_9104411869596109_8627479339811293399_n.jpg?stp=dst-jpg_tt6&cstp=mx720x540&ctp=s720x540&_nc_cat=107&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=833d8c&_nc_ohc=fTag4NlQy0wQ7kNvwHQVC_g&_nc_oc=AdrF3nDSqMECl52flbYLoDFcvyyo7annKMj2zkQjQw_NdbzM96Qb37Sb15N0-73h5PHnxi48kvU8i-_NXFqyLSPj&_nc_zt=23&_nc_ht=scontent.fagc1-1.fna&_nc_gid=wS3GAI3rT9fWibhWyahfSw&_nc_ss=7d2a8&oh=00_AQQdi119RGUqdBEKJFusiZGmB8zuLehPkEkT-Du7yVgdfw&oe=6AEAC3F3
         image_alt: Volunteers at work
-        body: We love our volunteers! Share in our community and Faith Forward family!
+        body: " We need Volunteers! Share in our community and Faith Forward family!"
         link_url: /volunteer
         cta_text: Learn More
         cta_url: /volunteer
         card_url: /volunteer
       - heading: Services
-        image: /images/card-2.png
+        image: https://scontent.fagc1-1.fna.fbcdn.net/v/t39.30808-6/480512868_1065919212228430_8476072436879428138_n.jpg?stp=cp6_dst-jpg_tt6&cstp=mx739x960&ctp=s739x960&_nc_cat=103&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=127cfc&_nc_ohc=SUydawY1wY8Q7kNvwG8p3GC&_nc_oc=AdphvFVV9ZcGjyx947heuO4oujr7fkkHMN5ZHkf6wF94lXmmMwWeLgLSyXvmMrGRgAopGR_Gc0NJ-RpIN-FB4myR&_nc_zt=23&_nc_ht=scontent.fagc1-1.fna&_nc_gid=dq9lEL8Glk_hKxBs123EtA&_nc_ss=7d2a8&oh=00_AQSovnM-A13nJ6rqvOfgGAZ_LvpZrAfKu7kISVTAazfMGQ&oe=6AEAD023
         image_alt: Volunteer Praying
         body: |-
+          * Counseling
+          * Faith Forward Institute
           * Case work
-          * Speaking engagements
-          * Workshops
-          * Community Engagement Projects
-          * Counseling in Mental Health, Children, Family, & Addiction
-          * Community Center
+          * Support Groups
+          * Angel Arms
+          * Angel Arms Brighter Path
+          * Speaking/outreach
+          * Called to Care
+          * Food, resourses, support
+          *  Youth program
         card_url: /services
         cta_text: View More
       - heading: Events
-        image: /images/card-3.png
+        image: https://scontent.fagc1-2.fna.fbcdn.net/v/t39.30808-6/525114848_1201050812048602_7179648444456772147_n.jpg?stp=cp6_dst-jpg_tt6&cstp=mx1536x2048&ctp=s1536x2048&_nc_cat=109&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=127cfc&_nc_ohc=M-I_TgSc600Q7kNvwEh-RE9&_nc_oc=Adq2Im3SUE9H8MgT0BuTxlAiMaD7Vch9CV3Zt7XlmKYrbcLxAmjcfffvsCrsEO-N-xw4HVARHFG-V6xr80Sz45n0&_nc_zt=23&_nc_ht=scontent.fagc1-2.fna&_nc_gid=Aaodf3tw8ltKr_wzYaxOxw&_nc_ss=7d2a8&oh=00_AQTDG9ERr53Mfp6QKptDGL_ReqrnlMpZfzbAag-hciC2TQ&oe=6AEAAB67
         image_alt: Event Attendees
         body: "We have events every month for our community! Find an event that speaks
           to you: we would love for you to join us."
         card_url: /events
         cta_text: View Events
+      - heading: Angel Arms
+        image: https://scontent.fagc1-1.fna.fbcdn.net/v/t39.30808-6/481190250_1077403114413373_2675944749526204502_n.jpg?stp=cp6_dst-jpg_tt6&cstp=mx1284x1649&ctp=s1284x1649&_nc_cat=102&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=833d8c&_nc_ohc=TnNwfntcd_kQ7kNvwFAQG7n&_nc_oc=Adp8jUaxZqMKuMlsL1XzU-YKXzTa1b62iOcuD9-mccT0weLz0OmRjDX4vMRAP_BrAZlHfa7I-SBsOZh_yjzOc4Xx&_nc_zt=23&_nc_ht=scontent.fagc1-1.fna&_nc_gid=e6avw8_FUR5v-WBCq2QcxQ&_nc_ss=7d2a8&oh=00_AQQWrQFUa9ZnaSXxm7UN3iRUX4V6bEcPbGvTYmnx67fG8Q&oe=6AEAD0CF
+        image_alt: ""
+      - heading: Called to Care (missions-at home and overseas)
+        image: https://scontent.fagc1-2.fna.fbcdn.net/v/t39.30808-6/689015836_1437140085106339_1994114185450849983_n.jpg?stp=dst-jpg_tt6&cstp=mx2048x1536&ctp=s2048x1536&_nc_cat=105&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=833d8c&_nc_ohc=YyUeAKqXcs4Q7kNvwG88jU1&_nc_oc=Adqco6eRd-5uo-91SiwIdl4mWpAl9nFnWChy_gK0HnhAz4ndLV_f-ZPXHWnCedbcw_8nTx9gvYTY7EkLj11vvG-B&_nc_zt=23&_nc_ht=scontent.fagc1-2.fna&_nc_gid=KzbldVe6WCTr98NWLq9kuQ&_nc_ss=7d2a8&oh=00_AQQLmZSVg4EfJBjTpj2VIKRXaESA90BGfoal__QmTZnSRA&oe=6AEABD4B
   - type: multi_text_grid
     bg_color: light-gray
     section_heading: Books
