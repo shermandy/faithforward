@@ -8,12 +8,34 @@ blocks:
   - type: hero_banner
     heading: Caring for the Community
     content: >-
-      A faith based human service facility that provides people in the community
-      with the resources, counseling, and encouragement to individuals and
-      family who may be in need!
+      Faith Forward Ministries is a faith-based human services organization
+      dedicated to bringing hope, healing, and practical support to individuals,
+      children, and families. We link arms with community programs, churches,
+      and ministries to meet needs and strengthen our communities.
 
 
-      We simply want to help. Our mission is to advocate for our community. We strive everyday to support those in need and we will never give up on you!
+      Our services include emergency food assistance, casework, counseling, recovery support, educational services, mentoring, ministry training, and community events and outreach. Through Angel Arms and Angel Arms Brighter Path, we also support children affected by trauma, prenatal substance exposure, and developmental challenges, while providing guidance and encouragement to parents and caregivers.
+
+
+      Rooted in Christ’s love, we meet people with compassion, connect them with resources, and walk alongside them as they build a stronger future. Whether you need support, encouragement, or help taking the next step, you belong here.
+
+
+      **One ministry. Many ways to serve. Hope for every generation.**
+
+
+      Faith Forward Ministries is a faith-based human services organization dedicated to bringing hope, healing, and practical support to individuals, children, and families. We link arms with community programs, churches, and ministries to meet needs and strengthen our communities.
+
+
+      Our services include emergency food assistance, casework, counseling, recovery support, educational services, mentoring, ministry training, and community events and outreach. Through Angel Arms and Angel Arms Brighter Path, we also support children affected by trauma, prenatal substance exposure, and developmental challenges, while providing guidance and encouragement to parents and caregivers.
+
+
+      Rooted in Christ’s love, we meet people with compassion, connect them with resources, and walk alongside them as they build a stronger future. Whether you need support, encouragement, or help taking the next step, you belong here.
+
+
+      **One ministry. Many ways to serve. Hope for every generation.**
+
+
+      Faith Forward Ministries, including its Angel Arms program, is a 501(c)(3) nonprofit organization. We are not a licensed agency and are committed to following applicable Department of Human Services policies and regulations.
     links:
       - url: /services
         text: Our Services
@@ -23,7 +45,7 @@ blocks:
         text: Our Story
         target: _self
         button_color: secondary
-    bg_image: /images/hero-trees.jpg
+    bg_image: /images/chatgpt-image-sep-29-2026-12_09_10-pm.png
   - type: rich_text
     body: |-
       ## Emergency Contact
