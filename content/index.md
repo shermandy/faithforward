@@ -45,7 +45,7 @@ blocks:
         text: Our Story
         target: _self
         button_color: secondary
-    bg_image: /images/chatgpt-image-sep-29-2026-12_09_10-pm.png
+    bg_image: https://scontent.fagc1-2.fna.fbcdn.net/v/t39.30808-6/689015836_1437140085106339_1994114185450849983_n.jpg?stp=dst-jpg_tt6&cstp=mx2048x1536&ctp=s2048x1536&_nc_cat=105&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=833d8c&_nc_ohc=YyUeAKqXcs4Q7kNvwG88jU1&_nc_oc=Adqco6eRd-5uo-91SiwIdl4mWpAl9nFnWChy_gK0HnhAz4ndLV_f-ZPXHWnCedbcw_8nTx9gvYTY7EkLj11vvG-B&_nc_zt=23&_nc_ht=scontent.fagc1-2.fna&_nc_gid=KzbldVe6WCTr98NWLq9kuQ&_nc_ss=7d2a8&oh=00_AQQLmZSVg4EfJBjTpj2VIKRXaESA90BGfoal__QmTZnSRA&oe=6AEABD4B
   - type: rich_text
     body: |-
       ## Emergency Contact
