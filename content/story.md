@@ -15,7 +15,7 @@ blocks:
       At Faith Forward Ministries, Inc., we believe that no one is defined by their past, their struggles, or a number on a client file. We see individuals. We see families. And above all, we see a future filled with hope.
 
 
-      ![Project Stand](https://scontent.fagc1-1.fna.fbcdn.net/v/t39.30808-6/855650168_10246237029161423_720484219741539991_n.jpg?stp=cp6_dst-jpg_tt6&cstp=mx720x960&ctp=s720x960&_nc_cat=101&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=127cfc&_nc_ohc=kAYPtQI1l-0Q7kNvwFMuF63&_nc_oc=Adr3_cYyzlDjPnnnu9TS7YJvuotN9afBmq4ht9XwJ3L5gzmZ5SgD42sNEqk-hTIYhle8O2BerTTQOcWW29PZqdq0&_nc_zt=23&_nc_ht=scontent.fagc1-1.fna&_nc_gid=UEF-eYC1ExWSYmRsAUY2Vw&_nc_ss=7d2a8&oh=00_AQQcjOmCbicybs0grlKN1kjP_1K10TFnmfXQMg7FgGG7ag&oe=6AEAB0EF "Project Stand")
+      ![](https://scontent.fagc1-1.fna.fbcdn.net/v/t39.30808-6/855650168_10246237029161423_720484219741539991_n.jpg?stp=cp6_dst-jpg_tt6&cstp=mx720x960&ctp=s720x960&_nc_cat=101&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=127cfc&_nc_ohc=kAYPtQI1l-0Q7kNvwFMuF63&_nc_oc=Adr3_cYyzlDjPnnnu9TS7YJvuotN9afBmq4ht9XwJ3L5gzmZ5SgD42sNEqk-hTIYhle8O2BerTTQOcWW29PZqdq0&_nc_zt=23&_nc_ht=scontent.fagc1-1.fna&_nc_gid=UEF-eYC1ExWSYmRsAUY2Vw&_nc_ss=7d2a8&oh=00_AQQcjOmCbicybs0grlKN1kjP_1K10TFnmfXQMg7FgGG7ag&oe=6AEAB0EF)
 
 
       As a 501(c)(3) nonprofit serving Indiana, Washington, Westmoreland County and surrounding communities, we share God’s love in practical, life-changing ways. We support individuals, children, and families facing homelessness, mental health challenges, substance use disorders, and other hardships through compassionate services, helpful resources, and encouragement. By linking arms with community programs and ministries, we help people find hope, build stability, and move forward.
